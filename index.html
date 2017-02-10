@@ -1,28 +1,794 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta charset="utf-8" >
-		<title>笑脸</title>
-		<meta  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"  name="viewport">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="format-detection" content="telephone=no">
-		<script src="js/jquery.min.js"></script>
-		<script src="js/canvas.js"></script>
-	</head>
-	<body>
-		<canvas id="Canvas" width="640" height="480">抱歉！浏览器不支持。</canvas>
-	</body>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery自动播放的照片墙特效 - 站长素材</title>
+    <link href="css/index1.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script>
+        function Showbigimg() {
+            var rom = parseInt(30 * Math.random());
+
+            var imgurl = $(".zppic:eq(" + rom + ")").find("img").attr("src");
+            $(".bigimg").attr({ "src": imgurl });
+
+            var bwidth = $(".bigimg").width();
+            var bheight = $(".bigimg").height();
+            var o = { left: "50%", width: "50%", top: "100px", "margin-left": "-400px" };
+
+            var pic = $(".zppic:eq(" + rom + ")");
+            $(".bigpic").css({ "left": pic.position().left, "top": pic.position().top });
+            $(".bigpic").show();
+
+            $(".bigpic").animate(o, 2000, function () {
+                setTimeout(function () {
+                    $(".bigpic").animate({ width: "100px", left: pic.position().left, top: pic.position().top, "margin-left": "0", "margin-top": "0" }, 2000, function () {
+                        $(".bigpic").hide();
+                        setTimeout(Showbigimg, 1000);
+                    });
+                }, 3000)
+            });
+        }
+
+        $(function () {
+            Showbigimg();         
+
+        })
+    </script>
+</head>
+<body>
+    <div class="zp">
+
+        <table>
+            <tbody><tr>
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/01.jpg">
+                    </div>
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/02.jpg">
+                    </div>
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/03.jpg">
+                    </div>
+                </td>
+                <td></td>
+
+                <td></td>
+
+
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/04.jpg">
+                    </div>
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/05.jpg">
+                    </div>
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/06.jpg">
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <!--1行 结束-->
+            <tr>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/07.jpg">
+                    </div>
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/08.jpg">
+                    </div>
+                </td>
+                <td></td>
+
+
+                <td>
+                    <div class="zppic">
+                        <img src="./images/09.jpg">
+                    </div>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td> </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/10.jpg">
+                    </div>
+                </td>
+            </tr>
+
+            <!--2行 结束-->
+
+            <tr>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/11.jpg">
+                    </div></td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><div class="zppic">
+                        <img src="./images/12.jpg">
+                    </div></td>
+
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/13.jpg">
+                    </div></td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/14.jpg">
+                    </div></td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/15.jpg">
+                    </div></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/16.jpg">
+                    </div>
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/17.jpg">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><div class="zppic">
+                        <img src="./images/18.jpg">
+                    </div></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td></td>
+
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td><div class="zppic">
+                        <img src="./images/19.jpg">
+                    </div></td>
+            </tr>
+
+
+            
+
+            <tr>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/20.jpg">
+                    </div></td>
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/21.jpg">
+                    </div></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/22.jpg">
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/23.jpg">
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/24.jpg">
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/25.jpg">
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/26.jpg">
+                    </div>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/27.jpg">
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>
+                    <div class="zppic">
+                        <img src="./images/28.jpg">
+                    </div>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <div class="zppic">
+                        <img src="./images/29.jpg">
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                <div class="zppic">
+                        <img src="./images/30.jpg">
+                    </div></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr></tbody></table>
+
+        <div class="bigpic" style="display: none;">
+            <img class="bigimg" src="" />
+        </div>
+    </div>
+    <div id="content" style="float:left;width:30%;text-align:center">
+    <table>
+            <tbody><tr>
+                <td></td>
+                <td></td>
+                <td>
+                 
+                </td>
+                <td>
+                  
+                </td>
+                <td></td>
+
+                <td></td>
+
+
+                <td></td>
+                <td>
+                  
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                   
+                </td>
+                <td></td>
+            </tr>
+            <!--1行 结束-->
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td>
+                   
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td> </td>
+                <td>
+                   
+                </td>
+            </tr>
+
+            <!--2行 结束-->
+
+            <tr>
+                <td>
+                    
+               </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+                <td>  
+                </td><td>
+                   
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+
+
+                <td></td>
+
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+            </tr>
+
+
+            
+
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                  
+                </td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                   
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                  
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+              	</td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr></tbody></table>
+    </div>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
